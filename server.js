@@ -22,7 +22,8 @@ app.engine('hbs', engine({
   }
 }));
 app.set('view engine', 'hbs');
-
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB Atlas
 mongoose.connect(database.url)
@@ -31,7 +32,6 @@ mongoose.connect(database.url)
 
 
 // Serve static files (CSS, JS)
-app.use(express.static(path.join(__dirname, 'public')));
 
 // -------------------- Employee Routes --------------------
 
