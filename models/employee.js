@@ -1,9 +1,11 @@
-// load mongoose since we need it to define a model
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-EmpSchema = new Schema({
-    name : String,
-    salary : Number,
-	age : Number
+const mongoose = require('mongoose');
+
+const empSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    salary: Number
 });
-module.exports = mongoose.model('Employee', EmpSchema);
+
+const Emp = mongoose.model('Emp', empSchema); // Create the model
+
+module.exports = Emp;

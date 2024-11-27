@@ -10,7 +10,6 @@ const Movie = require('./models/movie');
 const app = express();
 const port = process.env.PORT || 8000;
 
-
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
