@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies List</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie List</h1>
+        <h3>Hardik Shah - N01634409</h3>    
+    </header>
+    
+    <div class="movie-list">
+        {{#each movies}}
+            <div class="movie-card">
+                <h2>{{this.Title}} ({{this.Year}})</h2>
+                <p>{{this.Genre}}</p>
+                 <div class="movie-poster">
+                    {{#if this.Poster}}
+                        <img src="{{this.Poster}}" alt="Poster" style="max-width: 200px; max-height: 300px;">
+                    {{else}}
+                        <p>No poster available</p>
+                    {{/if}}
+                </div>
+                <a href="/movie/{{this.Movie_ID}}">View Details</a>
+                <a href="/edit/{{this.Movie_ID}}">Edit</a>
+                <form action="/delete/{{this.Movie_ID}}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        {{/each}}
+    </div>
+</body>
+</html>

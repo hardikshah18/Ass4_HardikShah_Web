@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Add New Movie</h1>
+        <a href="/">Back to Movie List</a>
+    </header>
+    
+    <form action="/api/movies" method="POST">
+        <!-- Movie ID Field -->
+        <input type="number" name="Movie_ID" placeholder="Movie ID" required>
+
+        <!-- Title Field -->
+        <input type="text" name="Title" placeholder="Title" required>
+
+        <!-- Release Date Field -->
+        <input type="text" name="Released" placeholder="Release Date" required>
+
+        <!-- Genre Field (Checkboxes) -->
+        <input type="text" name="Genre" placeholder="Genre" required>
+
+
+        <!-- Director Field -->
+        <input type="text" name="Director" placeholder="Director" required>
+
+        <!-- Plot Field -->
+        <textarea name="Plot" placeholder="Plot"></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Add Movie</button>
+    </form>
+</body>
+</html>

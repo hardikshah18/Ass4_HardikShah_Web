@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{movie.Title}} - Movie Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>{{movie.Title}} - Details</h1>
+        <a href="/">Back to Movies List</a>
+    </header>
+    
+    <div class="movie-details">
+        <h2>{{movie.Title}}</h2>
+        <p><strong>Release Year:</strong> {{movie.Released}}</p>
+        <p><strong>Genre:</strong> {{movie.Genre}}</p>
+        <p><strong>Director:</strong> {{movie.Director}}</p>
+        <p><strong>Actors:</strong> {{movie.Actors}}</p>
+        <p><strong>Plot:</strong> {{movie.Plot}}</p>
+         <div class="movie-poster">
+            {{#if movie.Poster}}
+                <img src="{{movie.Poster}}" alt="Movie Poster" style="max-width: 200px; max-height: 300px;">
+            {{else}}
+                <p>No poster available</p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>
